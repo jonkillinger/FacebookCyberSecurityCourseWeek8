@@ -94,7 +94,14 @@ Vulnerability #1: Cross-site Scripting
 
 ![Gif of 6](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/6.gif?raw=true)
 
-Vulnerability #2: Session Hijacking / Fixation
+Vulnerability #2: Username Enumeration
+
+    The red site is vulnerable to username enumeration, because attempting to login too many times will lock out the account from trying for x minutes. This is prompt confirms that the username exists in the system (accounts that do not exist will not throw this error message after 3 attempts)
+
+
+![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/11.gif?raw=true)
+
+Session Hijacking / Fixation
 Green site allows sessions to be a year old, and never regenerates the session ID, even when the user agent string changes. This makes it vulnerable to both session hijacking and session fixation attacks.  This is demonstrated by opening two browser instances. In the first, we will log in as an admin. We will then discover the session id using the provided tool, and give and set it to browser 2. With this id, browser 2 can bypass the login process. Uh-oh!
 
 ![Gif of 9](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/9.gif?raw=true)
@@ -102,12 +109,7 @@ Green site allows sessions to be a year old, and never regenerates the session I
 
 ## Red
 
-Vulnerability #1: Username Enumeration
-
-    The red site is vulnerable to username enumeration, because attempting to login too many times will lock out the account from trying for x minutes. This is prompt confirms that the username exists in the system (accounts that do not exist will not throw this error message after 3 attempts)
-
-
-![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/11.gif?raw=true)
+Vulnerability #1: 
 
 Vulnerability #2: IDOR
 
