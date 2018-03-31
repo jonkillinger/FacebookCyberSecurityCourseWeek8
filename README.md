@@ -67,7 +67,7 @@ Database: globitek_blue
 +-------------------------+
 ```
 
-![Gif of 5](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek/blob/master/5.gif?raw=true)
+![Gif of 5](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/5.gif?raw=true)
 
 Vulnerability #2: Session Hijacking / Fixation
 Blue site allows sessions to be a year old, and never regenerates the session ID, even when the user agent string changes. This makes it vulnerable to both session hijacking and session fixation attacks.  This is demonstrated by opening two browser instances. In the first, we will log in as an admin. We will then discover the session id using the provided tool, and give and set it to browser 2. With this id, browser 2 can bypass the login process. Uh-oh!
