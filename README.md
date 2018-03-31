@@ -69,8 +69,7 @@ Database: globitek_blue
 
 ![Gif of 5](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/5.gif?raw=true)
 
-Vulnerability #2: Session Hijacking / Fixation
-Blue site allows sessions to be a year old, and never regenerates the session ID, even when the user agent string changes. This makes it vulnerable to both session hijacking and session fixation attacks.  This is demonstrated by opening two browser instances. In the first, we will log in as an admin. We will then discover the session id using the provided tool, and give and set it to browser 2. With this id, browser 2 can bypass the login process. Uh-oh!
+Vulnerability #2: IDOR
 
 GIF:
 
@@ -89,7 +88,8 @@ Vulnerability #1: Cross-site Scripting
 
 ![Gif of 6](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/6.gif?raw=true)
 
-Vulnerability #2: __________________
+Vulnerability #2: Session Hijacking / Fixation
+Green site allows sessions to be a year old, and never regenerates the session ID, even when the user agent string changes. This makes it vulnerable to both session hijacking and session fixation attacks.  This is demonstrated by opening two browser instances. In the first, we will log in as an admin. We will then discover the session id using the provided tool, and give and set it to browser 2. With this id, browser 2 can bypass the login process. Uh-oh!
 
 
 ## Red
