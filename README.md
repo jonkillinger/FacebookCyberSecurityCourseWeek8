@@ -113,6 +113,12 @@ Vulnerability #2: Username Enumeration
 
 ![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/7.gif?raw=true)
 
+Vulnerability #3: IDOR
+
+Able to access salespeople who have been fired or inactive. Simply altering the url for the id request of a salesperson will give anyone access to a page not desired to be shown.
+
+![Gif of 10](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/10.gif?raw=true)
+
 
 
 ## Notes
