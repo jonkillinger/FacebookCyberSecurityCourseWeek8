@@ -107,7 +107,7 @@ Vulnerability #1: Username Enumeration
     The red site is vulnerable to username enumeration, because attempting to login too many times will lock out the account from trying for x minutes. This is prompt confirms that the username exists in the system (accounts that do not exist will not throw this error message after 3 attempts)
 
 
-![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/7.gif?raw=true)
+![Gif of 7](https://github.com/jonkillinger/FacebookCyberSecurityCourseWeek8/blob/master/11.gif?raw=true)
 
 Vulnerability #2: IDOR
 
